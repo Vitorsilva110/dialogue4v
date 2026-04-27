@@ -61,19 +61,14 @@ namespace Core
             yield return null;
 
             // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
-            if (GameManager.Instance.CanTransitionTo(GameState.Splash))
-            {
-                SceneManager.LoadScene("Splash");
-            }
+            SceneManager.LoadScene("Splash");
+            
 
             yield return new WaitForSeconds(2f);
 
-            if (GameManager.Instance.CanTransitionTo(GameState.MenuPrincipal))
-            {
-                SceneManager.LoadScene("Menu");
-            }
+            SceneManager.LoadScene("Menu");
 
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+            // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
         }
     }
 }
