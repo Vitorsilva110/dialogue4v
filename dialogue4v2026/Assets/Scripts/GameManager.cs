@@ -59,15 +59,6 @@ namespace Core
             DontDestroyOnLoad(gameObject);
         }
 
-        private void OnEnable()
-        {
-            OnGameplayEntered += HandleGameplayEnter;
-        }
-        private void OnDisable()
-        {
-            OnGameplayEntered -= HandleGameplayEnter;
-        }
-
         private void Start()
         {
             _currentState = GameState.Iniciando;
@@ -134,7 +125,6 @@ namespace Core
         {
             yield return SceneManager.LoadSceneAsync("SampleScene", LoadSceneMode.Single);
 
-            // 2. Carrega a cena de interface por cima (Aditiva)
             yield return SceneManager.LoadSceneAsync("GUI", LoadSceneMode.Additive);
 
             State = GameState.Gameplay;
